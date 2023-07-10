@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia dos namorados</title>
+    <style>
+        body {
+            background-color: blueviolet;
+        }
+
+        .painel {
+            background-color: aqua;
+            margin: auto;
+            width: 500px;
+            height: 500px;
+            border-radius: 25px;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        #sim {
+            height: 40px;
+            width: 60px;
+            background-color: brown;
+            border: 2px solid beige;
+            border-radius: 10px;
+            color: beige;
+            margin-left: -50px;
+        }
+
+        #nao {
+            position: absolute;
+            height: 40px;
+            width: 60px;
+            background-color: blue;
+            border: 2px solid beige;
+            border-radius: 10px;
+            color: beige;
+            margin-left: 10px;
+        }
+
+        #img-ursinho {
+            width: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="painel">
+        <h1>Feliz Dia Dos Namorados</h1>
+
+        <img src="ursinho.jpeg" alt="ursinho" style="width: 200px; height: 200px;">
+
+        <h2>Aceita Namorar Comigo?</h2>
+
+        <button id="sim" onclick="parabens()">Sim!</button>
+        <button onmouseover="fuja()" id="nao">Não!</button>
+
+    </div>
+
+    <script>
+        function fuja() {
+            var botaoNao = document.getElementById("nao");
+
+            var larguraJanela = window.innerWidth;
+            var alturaJanela = window.innerHeight;
+
+            var maxX = larguraJanela - botaoNao.offsetWidth;
+            var maxY = alturaJanela - botaoNao.offsetHeight;
+
+            var aleatorioX = Math.floor(Math.random() * maxX);
+            var aleatorioY = Math.floor(Math.random() * maxY);
+
+            botaoNao.style.left = aleatorioX + "px";
+            botaoNao.style.top = aleatorioY + "px";
+        }
+
+        function parabens() {
+            alert("Parabéns, agora você vai ter que me alimentar :)");
+        }
+    </script>
+</body>
+</html>
